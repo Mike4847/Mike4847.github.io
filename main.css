@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;600;800&display=swap');
+@import 'reset.css';
+@import 'variables.css';
+@import 'components/navbar.css';
+@import 'components/hero.css';
+@import 'components/cards.css';
+@import 'components/blog.css';
+
+/* ── Base ─────────────────────────────────────────── */
+body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+/* Subtle scanline texture overlay */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.03) 2px,
+        rgba(0,0,0,0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* ── Layout ───────────────────────────────────────── */
+.container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 var(--sp-6);
+}
+
+section {
+    padding: var(--sp-24) 0;
+}
+
+/* ── Typography ───────────────────────────────────── */
+h1, h2, h3 { font-family: var(--font-body); font-weight: 800; line-height: 1.15; }
+
+h2.section-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--text-primary);
+    margin-bottom: var(--sp-12);
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+}
+
+h2.section-title::before {
+    content: '//';
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-size: 0.9em;
+    font-weight: 300;
+}
+
+p { color: var(--text-secondary); margin-bottom: var(--sp-4); }
+
+code, .mono {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    color: var(--accent);
+    background: var(--accent-glow);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+/* ── Buttons ──────────────────────────────────────── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    padding: var(--sp-3) var(--sp-6);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    background: transparent;
+    transition: background var(--t-fast), color var(--t-fast);
+}
+
+.btn:hover {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+.btn-ghost {
+    border-color: var(--border);
+    color: var(--text-secondary);
+}
+
+.btn-ghost:hover {
+    border-color: var(--text-secondary);
+    background: transparent;
+    color: var(--text-primary);
+}
+
+/* ── Footer ───────────────────────────────────────── */
+footer {
+    border-top: 1px solid var(--border);
+    padding: var(--sp-8) 0;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+footer a { color: var(--accent-dim); transition: color var(--t-fast); }
+footer a:hover { color: var(--accent); }
+
+/* ── Scrollbar ────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-dim); }
+
+/* ── Selection ────────────────────────────────────── */
+::selection { background: var(--accent); color: var(--bg); }
+
+/* ── Fade-in animation ────────────────────────────── */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+    animation: fadeUp 0.6s var(--t-slow) both;
+}
+
+.fade-up:nth-child(2) { animation-delay: 0.1s; }
+.fade-up:nth-child(3) { animation-delay: 0.2s; }
+.fade-up:nth-child(4) { animation-delay: 0.3s; }

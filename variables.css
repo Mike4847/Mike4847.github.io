@@ -1,0 +1,41 @@
+:root {
+    /* Colors */
+    --bg:          #0a0e0f;
+    --bg-surface:  #111618;
+    --bg-raised:   #1a2023;
+    --border:      #1f2d30;
+
+    --text-primary:   #e8f0f0;
+    --text-secondary: #7a9fa5;
+    --text-muted:     #3d5a60;
+
+    --accent:       #00e5a0;       /* terminal green */
+    --accent-dim:   #00a870;
+    --accent-glow:  rgba(0, 229, 160, 0.15);
+
+    --amber:        #f0a500;       /* secondary accent */
+
+    /* Typography */
+    --font-mono:  'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+    --font-body:  'Syne', 'DM Sans', sans-serif;
+
+    /* Spacing scale */
+    --sp-1:  0.25rem;
+    --sp-2:  0.5rem;
+    --sp-3:  0.75rem;
+    --sp-4:  1rem;
+    --sp-6:  1.5rem;
+    --sp-8:  2rem;
+    --sp-12: 3rem;
+    --sp-16: 4rem;
+    --sp-24: 6rem;
+
+    /* Layout */
+    --max-w: 860px;
+    --nav-h: 64px;
+
+    /* Transitions */
+    --t-fast:   120ms ease;
+    --t-normal: 240ms ease;
+    --t-slow:   400ms ease;
+}
