@@ -1,0 +1,125 @@
+/* TERMINAL UI AESTHETICS */
+
+.landing-matrix {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.section-title {
+    color: #a89984;
+    /* Gruvbox light text */
+    font-size: 1.2rem;
+    border-bottom: 1px solid #3c3836;
+    padding-bottom: 0.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Syslog Header */
+.ascii-block {
+    color: #458588;
+    /* Gruvbox blue */
+    font-size: 0.8rem;
+    line-height: 1.2;
+    overflow-x: auto;
+    margin-bottom: 2rem;
+}
+
+.sysinfo {
+    background: #1d2021;
+    /* Deep terminal background */
+    padding: 1.5rem;
+    border: 1px solid #3c3836;
+    border-left: 4px solid #b8bb26;
+    /* Gruvbox green accent */
+}
+
+.prompt {
+    color: #b8bb26;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.info-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.info-list li {
+    margin-bottom: 0.3rem;
+}
+
+.info-list .label {
+    color: #fabd2f;
+    /* Gruvbox yellow */
+    display: inline-block;
+    width: 100px;
+}
+
+/* Thread List (Current Projects) */
+.thread-list {
+    list-style: none;
+    padding: 0;
+}
+
+.thread-list li {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.thread-list li::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: #83a598;
+}
+
+.pid {
+    color: #d3869b;
+    /* Gruvbox purple */
+    font-weight: bold;
+}
+
+/* Directory Table (Recent Logs) */
+.directory-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.directory-table th {
+    text-align: left;
+    color: #928374;
+    border-bottom: 1px solid #3c3836;
+    padding: 0.5rem 0;
+}
+
+.directory-table td {
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed #3c3836;
+}
+
+.col-date {
+    width: 120px;
+    color: #83a598;
+}
+
+.col-route {
+    width: 130px;
+    color: #fe8019;
+    /* Gruvbox orange */
+}
+
+.col-payload a {
+    color: #ebdbb2;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.col-payload a:hover {
+    color: #b8bb26;
+    text-decoration: underline;
+}

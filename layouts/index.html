@@ -1,0 +1,76 @@
+{{ define "main" }}
+<div class="landing-matrix">
+
+    <section class="syslog-header">
+        <pre class="ascii-block">
+   __  __ _      _               _   ___ _                       
+  |  \/  (_) ___| |__   __ _ ___| | | __| | ___ _ __ ___   __ _ _ __  
+  | |\/| | |/ __| '_ \ / _` / _ \ | | _|| |/ _ \ '_ ` _ \ / _` | '_ \ 
+  | |  | | | (__| | | | (_| |  __/ | |___| |  __/ | | | | | (_| | | | |
+  |_|  |_|_|\___|_| |_|\__,_|\___|_| |____|_|\___|_| |_| |_|\__,_|_| |_|
+        </pre>
+        <div class="sysinfo">
+            <span class="prompt">eleman@hpc-node:~$</span> neofetch --stdout
+            <ul class="info-list">
+                <li><span class="label">OS:</span> Arch Linux x86_64</li>
+                <li><span class="label">Host:</span> eleman-workspace</li>
+                <li><span class="label">Location:</span> Nairobi, KE (EAT)</li>
+                <li><span class="label">Kernel:</span> Linux Bare-Metal</li>
+                <li><span class="label">Uptime:</span> Continuous</li>
+                <li><span class="label">Compiler:</span> gcc, go, ghc</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="core-allocation">
+        <h2 class="section-title">>> init_process(about_me)</h2>
+        <p>
+            Systems Engineer and Developer with a BSc in Mathematics. Specializing in high-performance computing (HPC)
+            and low-latency architecture.
+            My work exists at the intersection of mathematical structures and bare-metal engineering, utilizing
+            <strong>C</strong>, <strong>C++</strong>, <strong>Go</strong>, <strong>Assembly (x86_64)</strong>, and
+            <strong>Haskell</strong>.
+            I leverage concepts from abstract algebra and category theory to write highly optimized, mathematically
+            sound code.
+        </p>
+    </section>
+
+    <section class="running-threads">
+        <h2 class="section-title">>> ps aux | grep active_projects</h2>
+        <ul class="thread-list">
+            <li>
+                <span class="pid">[PID 1042]</span> Architecting a high-performance, microservice-based WiFi billing
+                system utilizing gRPC-based IPC between Go and C++ services.
+            </li>
+            <li>
+                <span class="pid">[PID 1043]</span> Algorithmic optimization and competitive programming (Advent of
+                Code), focusing on cache sympathy and hardware-level efficiency.
+            </li>
+        </ul>
+    </section>
+
+    <section class="io-stream">
+        <h2 class="section-title">>> tail -n 5 /var/log/writeups.log</h2>
+
+        <table class="directory-table">
+            <thead>
+                <tr>
+                    <th class="col-date">TIMESTAMP</th>
+                    <th class="col-route">ROUTING</th>
+                    <th class="col-payload">PAYLOAD</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ range first 5 (where .Site.RegularPages "Type" "in" (slice "systems" "algorithms" "theory")) }}
+                <tr>
+                    <td class="col-date">{{ .Date.Format "2006-01-02" }}</td>
+                    <td class="col-route">[{{ .Section | upper }}]</td>
+                    <td class="col-payload"><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+                </tr>
+                {{ end }}
+            </tbody>
+        </table>
+    </section>
+
+</div>
+{{ end }}
