@@ -1,0 +1,77 @@
+baseURL = "https://Mike4847.github.io/"
+languageCode = "en-us"
+title = "Michael Eleman | Systems Engineering"
+
+# CRITICAL: Forces the GitHub Actions (UTC) container to compile timestamps
+# accurately against your local execution environment.
+timeZone = "Africa/Nairobi"
+
+# Define the default pagination limit for directory listings
+paginate = 15
+
+# compiler optimizations.
+# Disables the generation of taxonomy, term, and RSS feed pages.
+# We are enforcing strict, directory-based O(1) routing instead.
+disableKinds = ["taxonomy", "term", "rss"]
+
+# Disables Hugo's default injection of meta generator tags
+disableHugoGeneratorInject = true
+
+# Markdown Parser.
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+# Allows inline HTML execution within Markdown. Necessary for injecting
+# custom terminal blocks or KaTeX math expressions directly into technical logs.
+unsafe = true
+
+# SYNTAX HIGHLIGHTING ENGINE (CHROMA)
+[markup.highlight]
+# Maps to your terminal aesthetic
+style = "gruvbox"
+# Outputs clean HTML classes instead of inline CSS, reducing payload size
+noClasses = false
+guessSyntax = true
+lineNumbersInTable = true
+
+# AGGRESSIVE MINIFICATION (THE L2 CACHE)
+# When running `hugo --minify` in the CI pipeline, these rules enforce
+# absolute byte-reduction across the entire compiled payload.
+[minify]
+disableXML = true
+minifyOutput = true
+
+[minify.tdewolff]
+[minify.tdewolff.html]
+keepComments = false
+keepQuotes = false
+keepWhitespace = false
+
+[minify.tdewolff.css]
+keepCSS2 = false
+
+#
+# LOCAL SERVER TUNING (HOT RELOADING)
+# Optimizes the `hugo server -D` local execution loop by holding the
+# entire render tree in memory and disabling disk writes.
+[server]
+port = 1313
+watch = true
+noHTTPCache = true
+disableFastRender = false
+
+#
+# GLOBAL PARAMETERS & ENVIRONMENT VARIABLES
+#
+# These variables map directly into your Go templates via `{{ .Site.Params.X }}`
+[params]
+author = "Michael Eleman"
+description = "Systems Engineering, HPC, and Low-Latency Architecture"
+github = "Mike4847"
+
+# Custom metadata for the master scaffold footer
+[params.telemetry]
+os = "Arch Linux x86_64"
+kernel = "Linux Bare-Metal"
+compiler = "Hugo"
+edge_node = "NBO-01"

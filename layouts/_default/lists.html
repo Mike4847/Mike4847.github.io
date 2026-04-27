@@ -1,0 +1,48 @@
+{{ define "main" }}
+<div class="directory-matrix">
+
+    <section class="dir-header">
+        <h1 class="section-title">>> ls -lh ./{{ .Section }}</h1>
+
+        {{ if .Content }}
+        <div class="dir-description">
+            {{ .Content }}
+        </div>
+        {{ end }}
+    </section>
+
+    <section class="dir-listing">
+        <table class="directory-table">
+            <thead>
+                <tr>
+                    <th class="col-perms">PERMISSIONS</th>
+                    <th class="col-size">SIZE (RT)</th>
+                    <th class="col-date">TIMESTAMP</th>
+                    <th class="col-payload">PAYLOAD</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ range .Pages.ByDate.Reverse }}
+                <tr>
+                    <td class="col-perms">-rw-r--r--</td>
+                    <td class="col-size">{{ .ReadingTime }} min</td>
+                    <td class="col-date">{{ .Date.Format "2006-01-02" }}</td>
+                    <td class="col-payload">
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+
+                        {{ with .Params.complexity }}
+                        <span class="meta-tag">[{{ . }}]</span>
+                        {{ end }}
+
+                        {{ with .Params.language }}
+                        <span class="meta-lang">[{{ . }}]</span>
+                        {{ end }}
+                    </td>
+                </tr>
+                {{ end }}
+            </tbody>
+        </table>
+    </section>
+
+</div>
+{{ end }}

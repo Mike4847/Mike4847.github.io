@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="Systems Engineering, HPC, and Low-Latency Architecture">
+    <meta name="author" content="Michael Eleman">
+
+    <link rel="preload" href="/fonts/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/JetBrainsMono-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    {{ $style := resources.Get "css/style.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+</head>
+
+<body>
+
+    <header class="sys-header">
+        <div class="status-bar">
+            <span class="user">eleman@hpc-node</span>:<span class="dir">{{ if .IsHome }}~{{ else }}{{ .RelPermalink }}{{
+                end }}</span>$
+
+            <nav class="nav-links">
+                <a href="/" class="{{ if .IsHome }}active{{ end }}">cd ~</a>
+                <a href="/systems/" class="{{ if eq .Section " systems" }}active{{ end }}">cd systems/</a>
+                <a href="/algorithms/" class="{{ if eq .Section " algorithms" }}active{{ end }}">cd algorithms/</a>
+                <a href="/theory/" class="{{ if eq .Section " theory" }}active{{ end }}">cd theory/</a>
+                <a href="/cv/eleman-resume.pdf" target="_blank">cat cv.pdf</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="core-dump">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="sys-footer">
+        <div class="footer-matrix">
+            <div class="status-col">
+                <span>> SYSTEM STATUS: ONLINE</span>
+                <span>> COMPILER: Hugo v{{ hugo.Version }}</span>
+                <span>> ARCH: x86_64 / Bare-Metal Linux</span>
+            </div>
+            <div class="status-col right-align">
+                <span>> NODE: NBO-01</span> <span>> EOF</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

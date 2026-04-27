@@ -123,3 +123,268 @@
     color: #b8bb26;
     text-decoration: underline;
 }
+
+/* MASTER SCAFFOLD AESTHETICS */
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Forces the footer to the bottom of the viewport */
+}
+
+#core-dump {
+    flex: 1;
+    /* Pushes the footer down when content is sparse */
+}
+
+/* Header & Navigation */
+.sys-header {
+    background-color: #1d2021;
+    border-bottom: 2px solid #504945;
+    padding: 1rem 2rem;
+    font-size: 0.95rem;
+}
+
+.status-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.status-bar .user {
+    color: #b8bb26;
+    /* Gruvbox Green */
+    font-weight: bold;
+}
+
+.status-bar .dir {
+    color: #83a598;
+    /* Gruvbox Blue */
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #a89984;
+    text-decoration: none;
+    transition: color 0.1s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ebdbb2;
+    text-decoration: underline;
+}
+
+/* System Footer */
+.sys-footer {
+    background-color: #1d2021;
+    border-top: 2px solid #504945;
+    padding: 1.5rem 2rem;
+    color: #7c6f64;
+    font-size: 0.85rem;
+}
+
+.footer-matrix {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.status-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.right-align {
+    text-align: right;
+}
+
+/* DIRECTORY LISTING AESTHETICS */
+
+.directory-matrix {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.dir-description {
+    color: #a89984;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    border-left: 2px solid #504945;
+    padding-left: 1rem;
+}
+
+/* Extended Table Columns */
+.col-perms {
+    width: 110px;
+    color: #665c54;
+    /* Dimmed Gruvbox grey */
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.col-size {
+    width: 90px;
+    color: #d3869b;
+    /* Gruvbox Purple for metrics */
+    text-align: right;
+    padding-right: 1.5rem !important;
+}
+
+/* Custom Front Matter Tags */
+.meta-tag {
+    color: #83a598;
+    /* Blue for algorithmic complexity */
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+    font-weight: bold;
+}
+
+.meta-lang {
+    color: #fabd2f;
+    /* Yellow for language stacks (e.g., C++, Haskell) */
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+}
+
+/* SINGLE DOCUMENT AESTHETICS */
+
+.sys-document {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.doc-header {
+    border-bottom: 2px solid #504945;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.breadcrumb {
+    color: #83a598;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.doc-title {
+    color: #ebdbb2;
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+}
+
+.doc-meta {
+    display: flex;
+    gap: 1.5rem;
+    color: #928374;
+    font-size: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.env-var {
+    color: #fabd2f;
+}
+
+/* Markdown Typography & Layout */
+.doc-content h2 {
+    color: #a89984;
+    margin-top: 3rem;
+    border-bottom: 1px dashed #3c3836;
+    padding-bottom: 0.5rem;
+}
+
+.doc-content h3 {
+    color: #bdae93;
+    margin-top: 2rem;
+}
+
+.doc-content p {
+    color: #d5c4a1;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.doc-content a {
+    color: #83a598;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+}
+
+.doc-content a:hover {
+    border-color: #83a598;
+}
+
+/* Blockquotes for abstract theory or rules */
+.doc-content blockquote {
+    border-left: 4px solid #b8bb26;
+    background: #282828;
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    color: #ebdbb2;
+    font-style: italic;
+}
+
+/* Code Blocks & Inline Code */
+.doc-content pre {
+    background: #1d2021;
+    /* Deep terminal background */
+    border: 1px solid #3c3836;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-left: 2px solid #d3869b;
+    /* Purple accent for code execution */
+}
+
+.doc-content code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+}
+
+/* Inline code specifically */
+.doc-content p code,
+.doc-content li code {
+    background: #3c3836;
+    padding: 0.2rem 0.4rem;
+    color: #fe8019;
+    /* Orange to pop against text */
+}
+
+/* Footer Navigation */
+.doc-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #504945;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.eof-marker {
+    color: #7c6f64;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.btn-return {
+    color: #a89984;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    transition: color 0.1s ease;
+}
+
+.btn-return:hover {
+    color: #ebdbb2;
+}

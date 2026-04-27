@@ -1,0 +1,31 @@
+{{ define "main" }}
+<article class="sys-document">
+
+    <header class="doc-header">
+        <div class="breadcrumb">
+            <span class="prompt">eleman@hpc-node:~$</span> cat ./{{ .Section }}/{{ .File.LogicalName }}
+        </div>
+
+        <h1 class="doc-title">{{ .Title }}</h1>
+
+        <div class="doc-meta">
+            <span class="meta-item">TIMESTAMP: {{ .Date.Format "2006-01-02 15:04" }}</span>
+            <span class="meta-item">SIZE: {{ .WordCount }} words ({{ .ReadingTime }} min read)</span>
+
+            {{ with .Params.language }}
+            <span class="meta-item env-var">ENV: {{ . }}</span>
+            {{ end }}
+        </div>
+    </header>
+
+    <div class="doc-content">
+        {{ .Content }}
+    </div>
+
+    <footer class="doc-footer">
+        <div class="eof-marker">/* EOF */</div>
+        <a href="/{{ .Section }}/" class="btn-return">cd ..</a>
+    </footer>
+
+</article>
+{{ end }}
