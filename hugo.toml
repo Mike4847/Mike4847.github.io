@@ -8,7 +8,8 @@ timeZone = "Africa/Nairobi"
 
 # Define the default pagination limit for directory listings
 paginate = 15
-
+canonifyURLs = false
+relativeURLs = false
 # compiler optimizations.
 # Disables the generation of taxonomy, term, and RSS feed pages.
 # We are enforcing strict, directory-based O(1) routing instead.
