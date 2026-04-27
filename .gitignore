@@ -1,3 +1,4 @@
 convert.sh
 public/
 resources/
+.hugo_build.lock
