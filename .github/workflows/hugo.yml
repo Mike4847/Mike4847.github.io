@@ -40,7 +40,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "https://Mike4847.github.io/"
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
