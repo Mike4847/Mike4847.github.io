@@ -1,10 +1,13 @@
 ---
-title: Writing a Memory Allocator in C
-date: 2024-03-22
+layout: default
+category: algorithms
+published: true
+title: Writing a Custom Memory Allocator in C++
+date: 2025-06-23
 tags: [c, memory, systems]
 ---
 
-# Writing a Memory Allocator in C
+## Writing a Memory Allocator in C
 
 Every C program leans on `malloc` and `free` without much thought.
 In this post we rip out the guts of a simple allocator and build one from scratch.

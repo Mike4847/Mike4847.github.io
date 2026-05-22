@@ -1,0 +1,29 @@
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Michael
+tagline:          'CS & MATH'
+description:      'CS & Math Stuff'
+url:              https://lemaxmickey.github.io
+baseurl:          ''
+kramdown:
+  parse_block_html: true
+
+author:
+  name:           'Michael Eleman'
+
+paginate:         10
+
+# Custom vars
+version:          0.1.0
+
+github:           https://github.com/lemaxmickey
+
+plugins:
+  - jekyll-archives
+  - jekyll-seo-tag
